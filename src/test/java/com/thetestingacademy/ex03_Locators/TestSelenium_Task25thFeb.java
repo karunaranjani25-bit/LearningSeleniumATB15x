@@ -36,6 +36,8 @@ public class TestSelenium_Task25thFeb {
         String title_makeappointment = driver.findElement(By.tagName("h2")).getText();
         Assert.assertEquals(title_makeappointment,"Make Appointment");
 
+        driver.quit();
+
 
     }
 
