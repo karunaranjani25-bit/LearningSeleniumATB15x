@@ -13,7 +13,7 @@ import java.util.List;
 public class Task_Webtable01 {
 
     @Owner("Karuna")
-    @Description("orange hrm")
+    @Description("orange hrm task")
     @Test
     public void orangehrm_terminate() throws InterruptedException {
 
