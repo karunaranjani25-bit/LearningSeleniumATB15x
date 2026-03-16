@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
@@ -15,7 +16,9 @@ public class Task_Booking_com extends CommonToAll {
    @Test
    public void Booking_com() {
 
-       WebDriver driver = new ChromeDriver();
+       ChromeOptions options = new ChromeOptions();
+       options.addArguments("--incognito");
+       WebDriver driver = new ChromeDriver(options);
        openBrowser(driver, "https://booking.com");
 
        waitForVisibility(driver,"//button[@aria-label = 'Dismiss sign-in info.']");
@@ -30,10 +33,16 @@ public class Task_Booking_com extends CommonToAll {
        WebElement to_loc = driver.findElement(By.xpath("//span[contains(text(),'Going to')]"));
        to_loc.click();
 
+       WaitHelpers.waitJVM(5000);
+
        WebElement to = driver.findElement(By.xpath("//input[@data-ui-name='input_text_autocomplete']"));
        WaitHelpers.waitJVM(3000);
-       actions.moveToElement(to).click().sendKeys("DELHI")
+       actions.moveToElement(to).click().sendKeys("DEL")
+               .pause(3000)
                .keyDown(Keys.TAB)
+               .pause(1000)
+               .keyUp(Keys.TAB)
+               .pause(1000)
                .keyDown(Keys.ENTER).build().perform();
        WaitHelpers.waitJVM(5000);
 
