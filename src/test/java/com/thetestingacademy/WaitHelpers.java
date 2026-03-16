@@ -41,7 +41,7 @@ public class WaitHelpers {
 
             WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
             wait.until(ExpectedConditions.visibilityOf(element));
-            wait.until(ExpectedConditions.textToBePresentInElement(element, "Your email, password, IP address or location did not match"))
+            wait.until(ExpectedConditions.textToBePresentInElement(element, "Your email, password, IP address or location did not match"));
     }
 
     public static WebElement checkvisibilitybyfluentwait(WebDriver driver,By locator){

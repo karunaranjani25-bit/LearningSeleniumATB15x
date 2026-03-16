@@ -20,6 +20,7 @@ public class CommonToAll {
     }
 
     public void closeBrowser(){
+
         driver.quit();
     }
 
